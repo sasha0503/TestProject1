@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LabCalculator;
 using System;
 using System.Collections.Generic;
@@ -7,12 +7,13 @@ using System.Windows.Forms;
 
 namespace TestProject1
 {
+    [TestClass]
     public class ExcelTest
     {
-        [TestMethod()]
+        [TestMethod]
         public void Form1Test()
         {
-            Form1 form = new Form1();
+            Form1 form = new Form1(30, 30);
 
             // Check column naming
             Assert.AreEqual(form.getDataGridView().Columns[0].Name, "A");
@@ -24,10 +25,10 @@ namespace TestProject1
             Assert.AreEqual(form.getDataGridView().Rows[4].HeaderCell.Value, "4");
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void getDataGridViewTest()
         {
-            Form1 form = new Form1();
+            Form1 form = new Form1(30, 30);
             Assert.IsInstanceOfType(form.getDataGridView(), typeof(DataGridView), "wrong type!");
         }
     }
