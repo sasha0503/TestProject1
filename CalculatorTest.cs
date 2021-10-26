@@ -20,13 +20,13 @@ namespace TestProject1
         }
 
         [TestMethod()]
-        public void EvaluateTestMMin()
+        public void EvaluateTestSubtract()
         {
-            Assert.AreEqual(Calculator.Evaluate("mmin(12, 10, 5)"), 5);
-            Assert.AreEqual(Calculator.Evaluate("mmin(1.2, 10, 3)"), 1.2);
-            Assert.AreEqual(Calculator.Evaluate("mmin(1, 1, 1)"), 1);
-            Assert.AreEqual(Calculator.Evaluate("mmin(-1, 1, 0)"), -1);
-            Assert.AreEqual(Calculator.Evaluate("mmin(-(12^3), +120123, 8000000000.123123,-23)"), -1728);
+            Assert.AreEqual(Calculator.Evaluate("0-4"), -4);
+            Assert.AreEqual(Calculator.Evaluate("-1-1"), -2);
+            Assert.AreEqual(Calculator.Evaluate("2-2*2"), -2);
+            Assert.AreEqual(Calculator.Evaluate("2-2+2"), 2);
+            Assert.AreEqual(Calculator.Evaluate("-(102+2)"), -104);
         }
         [TestMethod()]
         public void EvaluateTestMod()
